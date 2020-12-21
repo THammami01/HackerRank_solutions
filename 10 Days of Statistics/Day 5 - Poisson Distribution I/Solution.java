@@ -14,17 +14,17 @@ public class Solution {
     }
     
     private static double poisson(int k, double lambda) {
-        return (Math.pow(lambda, k) * Math.pow(Math.E, -1 * lambda)) / factorial(k);
+        return Math.pow(lambda, k) * Math.exp(-lambda) / factorial(k);
     }
     
     private static Long factorial(int n) {
-        if (n < 0) {
+        if (n < 0)
             return null;
-        }
+       
         long result = 1;
-        while (n > 0) {
+        while (n > 0)
             result *= n--;
-        }
+        
         return result;
     }
 }
